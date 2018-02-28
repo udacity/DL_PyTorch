@@ -27,6 +27,20 @@ def test_network(net, trainloader):
     return True
 
 
+def imshow(image, ax=None, title=None):
+    ''' plt.imshow for Tensor '''
+    if ax is None:
+        fig, ax = plt.subplots()
+    image = image.numpy().transpose((1, 2, 0))
+    mean = np.array([0.5, 0.5, 0.5])
+    std = np.array([0.5, 0.5, 0.5])
+    image = std * image + mean
+    image = np.clip(image, 0, 1)
+    ax.imshow(image)
+    
+    return ax
+
+
 def view_recon(img, recon):
     ''' Function for displaying an image (as a PyTorch Tensor) and its 
         reconstruction also a PyTorch Tensor 
