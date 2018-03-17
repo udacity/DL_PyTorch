@@ -65,5 +65,5 @@ def view_classify(img, ps):
     ax2.set_aspect(0.1)
     ax2.set_yticks(np.arange(10))
     ax2.set_yticklabels(np.arange(10).astype(int), size='large');
-    ax2.set_title('Digit Probability')
+    ax2.set_title('Class Probability')
     ax2.set_xlim(0, 1.1)
